@@ -1,0 +1,23 @@
+*.mp4
+*.MOV
+
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.synctex.gz
+*.fdb_latexmk
+
+## Intermediate documents:
+*.dvi
+*.xdv
+*-converted-to.*
