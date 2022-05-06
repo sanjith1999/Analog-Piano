@@ -16,6 +16,7 @@
 .*.lb
 *.synctex.gz
 *.fdb_latexmk
+*.pdf
 
 ## Intermediate documents:
 *.dvi

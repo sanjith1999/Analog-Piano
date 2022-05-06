@@ -1,6 +1,5 @@
-\documentclass[class=article,crop=true,11pt]{standalone}
+\documentclass[../main.tex]{subfiles}
 
-\usepackage{../setting/preamble_}
 
 \begin{document}
 \twocolumn
@@ -21,7 +20,7 @@ The Wien Bridge Oscillator uses a feedback circuit consisting of a series RC nod
 \par
 Other part of the feedback signal is connected to the inverting input terminal(negative feed-back) via resistor divider network of $R_1\&R_2$. Then at the selected resonant frequency($f_r$), the voltages applied to the inverting and non-inverting inputs will be equal and “in-phase”. So the positive feedback will cancel out the negative feedback signal causing the circuit to oscillate.
 
-\begin{figure}
+\begin{figure}[h]
   \begin{subfigure}{.33\columnwidth}
     \centering
     \includegraphics[width=.95\columnwidth]{weistan_1}
