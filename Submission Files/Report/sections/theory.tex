@@ -1,8 +1,4 @@
-\documentclass[../main.tex]{subfiles}
 
-
-\begin{document}
-\twocolumn
 \section{Theory}
 \subsection{Oscillator}
 \begin{wrapfigure}{l}{0.3\columnwidth}
@@ -10,7 +6,7 @@
   \begin{center}
     \includegraphics[width=0.3\columnwidth]{oscillator}
   \end{center}
-  \vspace*{-.5cm}
+  \vspace*{-.8cm}
 \end{wrapfigure}
 
 An oscillator is an amplifier that uses positive feedback that generates an output frequency without the use of an externally applied input signal. Once the oscillation is started, the parameters A and $\beta$ are aligned to maintain a unity gain at the required frequency in order to keep the oscillation indefinitely stable.
@@ -70,12 +66,15 @@ Class AB amplifiers overcome the distortion issue of class B amplifiers by perma
 \end{figure}
 As the power dissipation due to the DC component is much less than class A amplifiers, these circuits allow the use of compact heat sinks during the operation.
 \subsubsection*{Variable Zerner Diode}
-\begin{wrapfigure}{r}{0.2\columnwidth}
-  \vspace*{-1cm}
-  \begin{center}
-    \includegraphics[width=0.2\columnwidth]{zener}
-  \end{center}
+\begin{figure}[h]
+  \begin{minipage}{.78\columnwidth}
+    This variable Zener diode circuit acts like a Zener diode with a breakdown voltage adjustable in a vast domain. This is achieved by driving a BJT in the active region and controlling the base current.
+  \end{minipage}
+  \begin{minipage}{.2\columnwidth}
+    \begin{center}
+      \includegraphics[width=\columnwidth]{zener}
+    \end{center}
+  \end{minipage}
   \vspace*{-.5cm}
-\end{wrapfigure}
-This variable Zener diode circuit acts like a Zener diode with a breakdown voltage adjustable in a vast domain. This is achieved by driving a BJT in the active region and controlling the base current. The current through the voltage divider $R_1\&R_2$ must be higher compared to the base current.
-\end{document}
+\end{figure}
+ The current through the voltage divider $R_1\&R_2$ must be higher compared to the base current.

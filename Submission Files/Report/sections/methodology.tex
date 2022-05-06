@@ -1,7 +1,3 @@
-\documentclass[../main.tex]{subfiles}
-
-\begin{document}
-\twocolumn
 \section{Methodology}
 \subsection{Preliminary Analysis}
 At an earlier stage of the project, we plan to build an octave piano with twelve notes including minor keys. At that stage, we analyzed the frequency spectrum of each note and found out it is possible to produce a majority feeling of sound with only four harmonics to a given note.
@@ -54,5 +50,4 @@ The op-amp NE5534 was chosen for the purpose according to its key characteristic
 After considering all the methods it is decided to implement the variable Zener diode which has the flexibility over varying bias voltage in a wider range. This provides control over two extremities, effecieny and quality of the output.
 \\
 \\
-\textbf{Bootstrapping}: The capacitor C5 gets charged to the pre-decided bias voltage.  By maintaining the circuit time constant very large ($t=R5\parallel R6\star C5>0.5S$) the overall bias voltage of the circuit is maintained as a constant value to compensate for the effect of thermal runaway.
-\end{document}
+\textbf{Bootstrapping}: The capacitor C5 gets charged to the pre-decided bias voltage.  By maintaining the circuit time constant very large ($t=R5\parallel R6\star C5>0.5S$) the overall bias voltage of the circuit is maintained at a constant value through-out the signal time.
