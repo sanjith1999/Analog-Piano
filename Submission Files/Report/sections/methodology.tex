@@ -39,8 +39,9 @@ At earlier stages, the amplifier was implemented in class-A configuration. The r
         \includegraphics[width=\columnwidth]{amplifier_cd}
     \end{center}
 \end{figure}
+\\
 \textbf{Active Amplifier Stage}: In the first part of the amplifier design an op-amp is used in the inverting configuration. The feedback path is connected to the end of the overall circuit to ensure enough current supply available in the output.\\
-The op-amp NE5534 was chosen for the purpose according to its key characteristics such as high unity-gain bandwidth(10MHz), very low harmonic distortion,high common mode rejection ratio (100dB). The capacitance values of C2 and C3 are chosen to allow only higher frequencies ($>20kHz$) to pass through. These are utilized in a manner to remove high-frequency noises from the wave-form.
+The op-amp NE5534 was chosen for the purpose according to its key characteristics such as high unity-gain bandwidth(10MHz), very low harmonic distortion,high common mode rejection ratio(100dB). The capacitance values of C2 and C3 are chosen to allow only higher frequencies ($>20kHz$) to pass through. These are utilized in a manner to remove high-frequency noises from the wave-form.
 \\
 \\
 \textbf{Push-Pull Stage}: Considering the requirement of high power gain it is decided to engage Darlington pairs for this purpose. These components failed in the long run due to the inability of compensating for high power dissipation. Considering this, the design moved to engage two coupled BJTs to allow the choices for transistors to be used in the high current path. The similar pairs TIP31C and TIP32C were chosen after considering their high power compensation capability(around 40W).
@@ -51,3 +52,66 @@ After considering all the methods it is decided to implement the variable Zener 
 \\
 \\
 \textbf{Bootstrapping}: The capacitor C5 gets charged to the pre-decided bias voltage.  By maintaining the circuit time constant very large ($t=R5\parallel R6\star C5>0.5S$) the overall bias voltage of the circuit is maintained at a constant value through-out the signal time.
+
+\subsection{Prototype Design}
+\begin{figure}[h]
+    \begin{minipage}{.53\columnwidth}
+        At earlier stages, a virtual prototype was developed using Multisim(see Appendix A), and many of the tests were carried out on this program itself. Afterward, the model is moved to the breadboard in a modular manner and the outputs at each stage were tested independently.
+    \end{minipage}
+    \begin{minipage}{.38\columnwidth}
+        \includegraphics[width=.95\columnwidth]{breadboard}
+    \end{minipage}
+\end{figure}
+
+As the final step of implementation, PCB for the physical prototype was designed using Altium (see Appendix B for layout). This was then screen printed and the relevant components soldered to the PCB. Finally, heatsinks were mounted accordingly to ensure safer operation.
+\subsection{Components}
+\subsubsection*{Wave Generator}
+The resistance and capacitance values corresponding to the filter circuit of each frequency in the oscillator are indicated below in the table. The normalized content ratio and resistance used in the input path of the scalar adder are also appended together.
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \toprule
+        f    & \multicolumn{2}{|c|}{Oscillator} & \multicolumn{2}{|c|}{Scaling}                         \\
+        \cmidrule{2-5}
+        (Hz) & R(k$\Omega$)                     & C(nF)                         & $\eta$ & R(k$\Omega$) \\
+        \midrule
+        281  & 5.67                             & \multirow{4}{*}{100}          & 0.1386 & 3.03         \\
+        537  & 2.96                             &                               & 1      & 420          \\
+        791  & 2.01                             &                               & 0.168  & 2.5          \\
+        1087 & 1.44                             &                               & 0.051  & 8.33         \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+Easily available 4-quad op-amp LM341 was chosen for oscillators. This allowed having a compact design in prototyping. UA751 op-amp is used in the scalar adder stage and 220ohm is used as feedback resistance to ensure the addition of all four waves sits in the supply range.
+\subsubsection*{Amplifier}
+The following list of elements is used in the amplifier stage to allow only the frequency in the audible range to pass through and to withstand high power dissipation.
+\begin{enumerate}
+    \item Capacitors :
+          \begin{tabular}{l r}
+              22$\mu$F  & 1 \\
+              100$\mu$F & 1 \\
+              100pF     & 2 \\
+          \end{tabular}
+    \item Resistors :
+          \begin{tabular}{l r}
+              10k$\Omega$  & 5 \\
+              1k$\Omega$   & 1 \\
+              5.6k$\Omega$ & 2 \\
+          \end{tabular}
+    \item Presets :
+          \begin{tabular}{l r}
+              10k$\Omega$  & 1 \\
+              100k$\Omega$ & 1 \\
+          \end{tabular}
+    \item Power Resistors :
+          \begin{tabular}{l r}
+              2.2$\Omega$ & 2 \\
+          \end{tabular}
+    \item Transistors :
+          \begin{tabular}{l r}
+              2N3904        & 1 \\
+              TIP31C,TIP32C & 1 \\
+              BD139,BD140   & 1 \\
+          \end{tabular}
+    \item Op-Amp : NE5534P   1
+\end{enumerate}

@@ -1,0 +1,41 @@
+\section{Conclusion}
+We were able to complete the project within the given period. However, some of the design parameters could not be fully met.
+\par
+The phases of each harmonics couldn't be able to control rather than fine-tuning the oscillator gains. The amplifier design does not meet the expected efficiency and bandwidth range. While it meets the lower cutoff requirement, the upper cutoff is lower than(12kHz) expectation(20kHz). The best-achieved envelope pattern had elongation in the beginning. The final prototype on the PCB couldn't be able to complete due to the poor quality of the tracks.
+\subsection*{Discussion}
+\begin{itemize}
+    \item Although the wave generator did a fine job with synthesizing c-wave, too many tuning parameters and complexity in combining oscillators make it hard to achieve such a feasible end-product as complete piano with this strategy.
+    \item There is a large amount of heat dissipated by the TIP transistors. Heat sinks attached to them failed to compensate for enough heat in the longer run. Thermal-run-away behavior was observed which hindered circuit performance with time.
+    \item The values obtained by the virtual simulation did not agree with the values obtained through the physical prototype. However, the specification sheet has been based on the prototype values. Therefore, the specification sheet will be an accurate representation of the performance.
+\end{itemize}
+\onecolumn
+\section*{References}
+\begin{enumerate}
+    \item \href{https://web.eecs.utk.edu/~hqi/ece505/project/proj1.pdf}{Synthesis of Musical Notes andInstrument Sounds with Sinusoids}
+    \item \href{https://electronics.stackexchange.com/questions/178975/is-it-feasible-to-synthesise-sound-with-analog-circuitry-these-days}{Feasiblity about synthesizing sound with analog
+              circuitry}
+    \item \href{http://www.vibrationdata.com/piano.htm}{Original Sounds of Piano}
+    \item \href{https://universe-review.ca/R12-03-wave02.htm}{Wave, Sound, and Music}
+    \item  \href{https://en.wikipedia.org/wiki/Wien_bridge_oscillator}{Weinbridge-Oscillator}
+    \item \href{https://www.homemade-circuits.com/simple-sine-wave-generator-circuits/}{Alternative sine wave generators}
+    \item \href{https://www.ams.jhu.edu/dan-mathofmusic/sound-waves/}{Mathematics behind wave manipulation}
+    \item \href{http://www.jiisuki.net/reports/howto-build-analog-synth.pdf}{How to Design and Build an Analog Synthesizer from Scratch}
+\end{enumerate}
+\vspace*{5cm}
+\section*{Contribution}
+\begin{tabular}{|l|l|l|}
+    \toprule
+    ID NO                    & Member                              & Contribution                                           \\
+    \midrule\midrule
+    \multirow{2}{*}{190562G} & \multirow{2}{*}{S.Sanjith}          & Damper Design, Improvisation of Amplfier Design,       \\
+                             &                                     & Routing of PCBs, Data Sheet Design                     \\
+    \midrule
+    \multirow{2}{*}{190557V} & \multirow{2}{*}{K.G.C.P.Sandaruwan} & Oscillator Design, Scalar Adder Design                 \\
+                             &                                     & Oscillator Schematic Design                            \\
+    \midrule
+    \multirow{2}{*}{190539T} & \multirow{2}{*}{T.Sajeepan}         & Analyzation of Original Wave, Amplifier Design(basic), \\
+                             &                                     & Amplifier schematic design                             \\
+    \midrule
+    190543B                  & G.S.M.U.K.Samarakoon                & Contribution to Amplifier Design                         \\
+    \bottomrule
+\end{tabular}
