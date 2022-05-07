@@ -1,8 +1,8 @@
 \section{Methodology}
 \subsection{Preliminary Analysis}
-At an earlier stage of the project, we plan to build an octave piano with twelve notes including minor keys. At that stage, we analyzed the frequency spectrum of each note and found out it is possible to produce a majority feeling of sound with only four harmonics to a given note.
+At an earlier stage of the project, it is planned to build an octave piano with twelve notes including minor keys. At that stage, we analyzed the frequency spectrum of each note and found out it is possible to produce a majority feeling of sound with only four harmonics to a given note.
 \par
-After synthesizing all the keynotes from its harmonics using Matlab, we moved to circuit development. At this stage, we decided to stimulate only one note from the piano because the generation of notes is modularizable. For this purpose, we have chosen the C-wave which is in the middle of the spectrum.
+After synthesizing all the keynotes from its harmonics using Matlab, we moved to circuit development. At this stage, it is decided to stimulate only one note from the piano because the generation of notes is modularizable. For this purpose, the C-wave have chosen  which is in the middle of the spectrum.
 \begin{figure}[h]
     \begin{subfigure}{.45\columnwidth}
         \centering
@@ -27,7 +27,7 @@ Square wave generation of half the frequency together with a bandpass active fil
 \par
 Moving towards a stable solution brought the Wien bridge oscillator into play. These oscillators have the flexibility over frequency choice ($\frac{1}{2\pi RC}$) making them the most suitable option to be used with modularizable piano.
 \subsubsection{Key and Pedal}
-After a clear analysis of the waveform using Matlab, it is expected to achieve an exponential decay in the waveform once the oscillation is triggered. Looking at the discharging behavior of the capacitor initially it decided to engage a capacitor together with an analog multiplier to form an envelope around wave output.
+After a clear analysis of the waveform using Matlab, it is expected to achieve an exponential decay in the waveform once the oscillation is triggered. Looking at the discharging behavior of the capacitor initially it is decided to engage a capacitor together with an analog multiplier to form an envelope around wave output.
 \par
 Due to the power inefficiency of the design and difficulty in finding good quality multipliers, the design moved to engage tuning of negative feedback of oscillator to achieve necessary output. This is further utilized to mimic the damping pedal of the piano by controlling the elongation of the signal-out of each oscillator.
 \subsubsection{Scalar Adder}
@@ -82,7 +82,7 @@ The resistance and capacitance values corresponding to the filter circuit of eac
     \end{tabular}
 \end{center}
 
-Easily available 4-quad op-amp LM341 was chosen for oscillators. This allowed having a compact design in prototyping. UA751 op-amp is used in the scalar adder stage and 220ohm is used as feedback resistance to ensure the addition of all four waves sits in the supply range.
+Easily available 4-quad op-amp LM341 was chosen for oscillators. This allowed having a compact design in prototyping. UA751 op-amp is used in the scalar adder stage and 220$\Omega$ is used as feedback resistance to ensure the addition of all four waves sits in the supply range.
 \subsubsection*{Amplifier}
 The following list of elements is used in the amplifier stage to allow only the frequency in the audible range to pass through and to withstand high power dissipation.
 \begin{enumerate}
