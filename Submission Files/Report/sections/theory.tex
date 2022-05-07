@@ -1,11 +1,9 @@
 
 \section{Theory}
 \subsection{Oscillator}
-\begin{wrapfigure}{l}{0.3\columnwidth}
+\begin{wrapfigure}{l}{0.50\columnwidth}
   \vspace*{-.5cm}
-  \begin{center}
-    \includegraphics[width=0.28\columnwidth]{oscillator}
-  \end{center}
+  \includegraphics[width=0.53\columnwidth]{oscillator}
   \vspace*{-.8cm}
 \end{wrapfigure}
 
@@ -17,18 +15,19 @@ The Wien Bridge Oscillator uses a feedback circuit consisting of a series RC nod
 Other part of the feedback signal is connected to the inverting input terminal(negative feed-back) via resistor divider network of $R_1\&R_2$. Then at the selected resonant frequency($f_r$), the voltages applied to the inverting and non-inverting inputs will be equal and “in-phase”. So the positive feedback will cancel out the negative feedback signal causing the circuit to oscillate.
 
 \begin{figure}[h]
-  \begin{subfigure}{.33\columnwidth}
+  \begin{subfigure}{.58\columnwidth}
     \centering
     \includegraphics[width=.95\columnwidth]{weistan_1}
     \caption*{RC-Network}
   \end{subfigure}
-  \begin{subfigure}{.33\columnwidth}
+  \begin{subfigure}{.38\columnwidth}
     \centering
     \includegraphics[width=.95\columnwidth]{weistan_2}
     \caption*{Response}
   \end{subfigure}
-  \begin{subfigure}{.3\columnwidth}
-    \centering
+  \newline
+  \centering
+  \begin{subfigure}{.65\columnwidth}
     \includegraphics[width=.95\columnwidth]{weistan_3}
     \caption*{Oscillator}
   \end{subfigure}
@@ -40,13 +39,12 @@ Keeping the feedback ratio slightly more ($>\frac{1}{3}$) will give rise to a re
 \subsection{Amplifier}
 Driving a high-power (3W) speaker draws a high amount of current from the circuit. These current ranges are very much higher than the maximum supply available from op-amps and other low power components used in generating the wave patterns. So it is crucial to maintain an amplifier boundary between low power noisy signal to high power driving signal free of noise. In the following context, we will discuss the theories behind our amplifier design in detail.
 \subsubsection*{Class-A }
-\begin{wrapfigure}{l}{0.35\columnwidth}
-  \vspace*{-.5cm}
+\begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.35\columnwidth]{classA}
+    \includegraphics[width=0.75\columnwidth]{classA}
+    \vspace*{-.5cm}
   \end{center}
-  \vspace*{-.5cm}
-\end{wrapfigure}
+\end{figure}
 These are the simplest configuration among other families. It uses a single-ended transistor for its output stage with the resistive load connected directly to the Collector terminal. When the transistor switches “ON” it sinks the output current through the Collector resulting in an inevitable voltage drop across the Emitter resistance thereby limiting the negative output capability.
 \par
 The current handling capability of such an amplifier family can be increased drastically by replacing the output transistor with the structure of \textbf{Darlington pair}. These devices provide high input impedance.
@@ -60,21 +58,21 @@ Class AB amplifiers overcome the distortion issue of class B amplifiers by perma
 \begin{figure}[h]
   \vspace*{-.2cm}
   \begin{center}
-    \includegraphics[width=.6\columnwidth]{classAB}
+    \includegraphics[width=.85\columnwidth]{classAB}
   \end{center}
   \vspace*{-.5cm}
 \end{figure}
 As the power dissipation due to the DC component is much less than class A amplifiers, these circuits allow the use of compact heat sinks during the operation.
 \subsubsection*{Variable Zerner Diode}
 \begin{figure}[h]
-  \begin{minipage}{.78\columnwidth}
+  \begin{minipage}{.68\columnwidth}
     This variable Zener diode circuit acts like a Zener diode with a breakdown voltage adjustable in a vast domain. This is achieved by driving a BJT in the active region and controlling the base current.
   \end{minipage}
-  \begin{minipage}{.2\columnwidth}
+  \begin{minipage}{.3\columnwidth}
     \begin{center}
       \includegraphics[width=\columnwidth]{zener}
     \end{center}
   \end{minipage}
   \vspace*{-.5cm}
 \end{figure}
- The current through the voltage divider $R_1\&R_2$ must be higher compared to the base current.
+The current through the voltage divider $R_1\&R_2$ must be higher compared to the base current.
